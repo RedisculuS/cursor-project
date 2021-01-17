@@ -23,11 +23,18 @@ class TableWiev extends Component {
         super(props);
         this.state = {
           categories: props.data,
-          value: ''
+          category: '',
+          //desc: '',
+          //date: '',
+         // money: ''
         };
 
-        this.handleChange = this.handleChange.bind(this);
-        this.addItem = this.addItem.bind(this);
+        this.handleChangeCategory = this.handleChangeCategory.bind(this);
+        // this.handleChangeDescription = this.handleChangeDescription.bind(this);
+        // this.handleChangeDate = this.handleChangeDate.bind(this);
+        // this.handleChangeMoney = this.handleChangeMoney.bind(this);
+
+        this.addCategory = this.addCategory.bind(this);
     }
     
     // state = {
@@ -35,13 +42,32 @@ class TableWiev extends Component {
     //     value: ''
     //   };
 
-    handleChange(e){
-        this.setState({value: e.target.value});
+    handleChangeCategory(e){
+        this.setState({category: e.target.value});
     }
+    // handleChangeDescription(e){
+    //     this.setState({desc: e.target.value});
+    // }
+    // handleChangeDate(e){
+    //     this.setState({date: e.target.value});
+    // }
+    // handleChangeMoney(e){
+    //     this.setState({money: e.target.value});
+    // }
 
-    addItem = () => {
-        this.setState({categories: [...this.state.categories, {category: this.state.value}]});
+    addCategory = () => {
+        this.setState({categories: [...this.state.categories, {category: this.state.category}]});
     }
+    // addDescription = () => {
+    //     this.setState({categories: [...this.state.categories, {description: this.state.desc}]});
+    // }
+    // addDate = () => {
+    //     this.setState({categories: [...this.state.categories, {date: this.state.date}]});
+    // }
+    // addMoney = () => {
+    //     this.setState({categories: [...this.state.categories, {money: this.state.money}]});
+    // }
+    
         
     render() {
 
@@ -50,10 +76,30 @@ class TableWiev extends Component {
         
         <div>
             <form>
-                <label>
-                    <input type="text" value={this.state.value} onChange={this.handleChange}></input>
-                </label>
-                <button type="submit" onClick={this.addItem}>Submit</button>
+                <p>
+                    <label>Category
+                        <input type="text" value={this.state.category} onChange={this.handleChangeCategory}></input>
+                    </label>
+                    <button type="button" onClick={this.addCategory}>Add</button>
+                </p>
+                {/* <p>
+                    <label>Description
+                        <input type="text" value={this.state.desc} onChange={this.handleChangeDescription}></input>
+                    </label>
+                    <button type="button" onClick={this.addDescription}>Add</button>
+                </p>
+                <p>
+                    <label>Category
+                        <input type="text" value={this.state.value} onChange={this.handleChange}></input>
+                    </label>
+                    <button type="button" onClick={this.addItem}>Add</button>
+                </p>
+                <p>
+                    <label>Category
+                        <input type="text" value={this.state.value} onChange={this.handleChange}></input>
+                    </label>
+                    <button type="button" onClick={this.addItem}>Add</button>
+                </p> */}
             </form>
         </div>
 

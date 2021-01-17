@@ -1,7 +1,21 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap'); */
 
+form {
+    margin-top: 50px;
+    margin-left: 150px;
+}
+
+label {
+    margin-right: 15px;
+}
+
+input {
+    margin-left: 15px;
+}
+
 .table {
-    margin: 150px;
+    margin-left: 150px;
+    margin-top: 50px;
     border: 1px solid grey;
     border-collapse: collapse;
     font-weight: 500;
